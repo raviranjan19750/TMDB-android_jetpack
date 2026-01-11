@@ -15,20 +15,22 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 
 ### Demo Videos
 
-#### Main App Demo
-<video src="app/demo/demo.mp4" width="600" controls></video>
+#### 1. Main App Demo
+📹 [Watch Demo Video](app/demo/demo.mp4)
 
 *Complete walkthrough of the app features including movie list, search, and detail screens.*
 
-#### Offline Cache Demo
-<video src="app/demo/offline_cache_demo.mp4" width="600" controls></video>
+#### 2. Offline Cache Demo
+📹 [Watch Offline Cache Demo](app/demo/offline_cache_demo.mp4)
 
 *Demonstrates offline functionality - app works seamlessly without internet connection using cached data.*
 
-#### Theme Toggle Demo
-<video src="app/demo/theme_toggle.mp4" width="600" controls></video>
+#### 3. Theme Toggle Demo
+📹 [Watch Theme Toggle Demo](app/demo/theme_toggle.mp4)
 
 *Shows dark mode and light mode switching with smooth transitions.*
+
+> **Note:** Click the links above to view the videos. For best viewing experience on GitHub, you can also download the videos or view them in the repository.
 
 ### UI Screenshots
 
