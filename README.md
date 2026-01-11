@@ -39,9 +39,6 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 <img src="app/demo/listing_page.jpeg" width="200" alt="Movie Listing Page"> <img src="app/demo/details_page.jpeg" width="200" alt="Movie Details Page">
 
 
-
-*Detailed view of a selected movie with poster, title, and overview information.*
-
 ## Architecture
 
 The app follows **Clean Architecture** with **MVVM** pattern:
