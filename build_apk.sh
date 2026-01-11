@@ -9,6 +9,47 @@ echo "🔨 Building Optimized Release APK..."
 # Navigate to project root
 cd "$(dirname "$0")"
 
+# Check for Java
+check_java() {
+    if command -v java &> /dev/null; then
+        JAVA_VERSION=$(java -version 2>&1 | head -n 1)
+        echo "✅ Found Java: $JAVA_VERSION"
+        return 0
+    fi
+    
+    # Check for Android Studio's bundled JDK (macOS)
+    if [ -d "$HOME/Library/Android/sdk/jbr/Contents/Home" ]; then
+        export JAVA_HOME="$HOME/Library/Android/sdk/jbr/Contents/Home"
+        export PATH="$JAVA_HOME/bin:$PATH"
+        echo "✅ Using Android Studio's bundled JDK"
+        return 0
+    fi
+    
+    # Check for Android Studio's bundled JDK (alternative location)
+    if [ -d "/Applications/Android Studio.app/Contents/jbr/Contents/Home" ]; then
+        export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+        export PATH="$JAVA_HOME/bin:$PATH"
+        echo "✅ Using Android Studio's bundled JDK"
+        return 0
+    fi
+    
+    echo "❌ Java not found!"
+    echo ""
+    echo "Please install Java or set JAVA_HOME:"
+    echo "1. Install JDK 17 from: https://adoptium.net/"
+    echo "2. Or set JAVA_HOME to Android Studio's JDK:"
+    echo "   export JAVA_HOME=\"/Applications/Android Studio.app/Contents/jbr/Contents/Home\""
+    echo "   export PATH=\"\$JAVA_HOME/bin:\$PATH\""
+    echo ""
+    echo "Then run this script again."
+    return 1
+}
+
+# Check Java before proceeding
+if ! check_java; then
+    exit 1
+fi
+
 # Clean previous builds
 echo "🧹 Cleaning previous builds..."
 ./gradlew clean
