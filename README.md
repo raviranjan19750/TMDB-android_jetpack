@@ -16,31 +16,29 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 ### Demo Videos
 
 #### 1. Main App Demo
-📹 [Watch Demo Video](app/demo/demo.mp4)
-
+📹 
 *Complete walkthrough of the app features including movie list, search, and detail screens.*
 
-#### 2. Offline Cache Demo
-📹 [Watch Offline Cache Demo](app/demo/offline_cache_demo.mp4)
+<video src="https://github.com/user-attachments/assets/f2e130fc-0151-4e85-99fc-8eeded060469" width="200"></video>
 
+
+#### 2. Offline Cache Demo
+📹 
 *Demonstrates offline functionality - app works seamlessly without internet connection using cached data.*
 
-#### 3. Theme Toggle Demo
-📹 [Watch Theme Toggle Demo](app/demo/theme_toggle.mp4)
+<video src="https://github.com/user-attachments/assets/6812e859-1337-4e02-a669-2ead3992519c" controls width="100%"></video>
 
+#### 3. Theme Toggle Demo
+📹 
 *Shows dark mode and light mode switching with smooth transitions.*
 
-> **Note:** Click the links above to view the videos. For best viewing experience on GitHub, you can also download the videos or view them in the repository.
+<video src="https://github.com/user-attachments/assets/cdcf14c5-8325-499e-93da-e74f4f7b5014" controls width="100%"></video>
 
 ### UI Screenshots
 
-#### Movie Listing Page
-<img src="app/demo/listing_page.jpeg" width="300" alt="Movie Listing Page">
+<img src="app/demo/listing_page.jpeg" width="200" alt="Movie Listing Page"> <img src="app/demo/details_page.jpeg" width="200" alt="Movie Details Page">
 
-*Main screen displaying trending movies in a 2-column grid with search functionality.*
 
-#### Movie Details Page
-<img src="app/demo/details_page.jpeg" width="300" alt="Movie Details Page">
 
 *Detailed view of a selected movie with poster, title, and overview information.*
 
