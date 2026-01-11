@@ -11,15 +11,36 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 - **Dark Mode**: Automatic dark/light theme based on system settings
 - **Search History**: Recent searches are saved for quick access
 
-## Screenshots
+## Demo
 
-| Movie List (Light) | Movie Details (Light) |
-|:--:|:--:|
-| ![Movie List](screenshots/movie_list.png) | ![Movie Details](screenshots/movie_details.png) |
+### Demo Videos
 
-## Demo Video
+#### Main App Demo
+https://github.com/user-attachments/assets/demo.mp4
 
-[Add your demo recording here]
+*Complete walkthrough of the app features including movie list, search, and detail screens.*
+
+#### Offline Cache Demo
+https://github.com/user-attachments/assets/offline_cache_demo.mp4
+
+*Demonstrates offline functionality - app works seamlessly without internet connection using cached data.*
+
+#### Theme Toggle Demo
+https://github.com/user-attachments/assets/theme_toggle.mp4
+
+*Shows dark mode and light mode switching with smooth transitions.*
+
+### UI Screenshots
+
+#### Movie Listing Page
+![Movie Listing Page](app/demo/listing_page.jpeg)
+
+*Main screen displaying trending movies in a 2-column grid with search functionality.*
+
+#### Movie Details Page
+![Movie Details Page](app/demo/details_page.jpeg)
+
+*Detailed view of a selected movie with poster, title, and overview information.*
 
 ## Architecture
 
