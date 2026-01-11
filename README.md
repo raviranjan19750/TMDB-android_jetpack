@@ -174,6 +174,3 @@ Both variants use the API key from `local.properties`.
 - Make sure you've created `local.properties` from `local.properties.example`
 - The app will use a placeholder key if `local.properties` doesn't exist (will cause API errors)
 
-## License
-
-This project is for educational purposes as part of a take-home assignment.
