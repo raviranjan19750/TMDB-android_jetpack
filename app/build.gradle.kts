@@ -6,10 +6,12 @@ plugins {
 }
 
 // Load API key from local.properties file (not committed to Git)
-val localProperties = java.util.Properties()
 val localPropertiesFile = rootProject.file("local.properties")
+val localProperties = java.util.Properties()
 if (localPropertiesFile.exists()) {
-    localProperties.load(java.io.FileInputStream(localPropertiesFile))
+    localPropertiesFile.inputStream().use { stream ->
+        localProperties.load(stream)
+    }
 }
 val tmdbApiKey = localProperties.getProperty("TMDB_API_KEY") ?: "REPLACE_WITH_YOUR_TMDB_API_KEY"
 
