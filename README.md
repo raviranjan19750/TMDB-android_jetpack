@@ -58,21 +58,59 @@ app/
 
 ## Setup
 
-1. Clone the repository:
+### Prerequisites
+- Android Studio Hedgehog or later
+- JDK 17 or later
+- Android SDK 24+
+
+### Quick Start
+
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/TMDB-Atlys.git
+   cd TMDB-Atlys
    ```
 
-2. Get your TMDB API key:
+2. **Get your TMDB API key** (free, takes 2 minutes):
    - Register at [TMDB](https://www.themoviedb.org/)
-   - Go to Settings → API → Generate API key
+   - Go to **Settings** → **API** → **Create** or **Request API Key**
+   - Copy your API key
 
-3. Add your API key in `app/build.gradle.kts`:
-   ```kotlin
-   buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+3. **Add your API key** (choose one method):
+
+   **Option A: Using the setup script (Recommended)**
+   ```bash
+   ./setup_api_key.sh
+   ```
+   Follow the prompts to enter your API key.
+
+   **Option B: Manual setup**
+   ```bash
+   # Copy the example file
+   cp local.properties.example local.properties
+   
+   # Edit local.properties and replace YOUR_API_KEY_HERE with your actual key
+   # Or use the script: ./setup_api_key.sh
    ```
 
-4. Build and run the app
+4. **Sync and build:**
+   - Open the project in Android Studio
+   - **File** → **Sync Project with Gradle Files**
+   - Build and run the app (▶️ Run button)
+
+### Security Note
+
+🔒 **API keys are stored securely:**
+- API key is stored in `local.properties` (gitignored, never committed)
+- The `local.properties.example` file is a template (safe to commit)
+- This follows Android security best practices
+- Your API key will never be exposed in the repository
+
+**Why this approach?**
+- Protects sensitive credentials from being committed to version control
+- Allows easy setup for new developers
+- Follows industry-standard security practices
+- Demonstrates security awareness in code
 
 ## API Endpoints Used
 
@@ -101,15 +139,22 @@ Coil is configured with:
 
 ## Build Variants
 
-- **Debug**: Logging enabled, API key for development
-- **Release**: Minified, API key for production
+- **Debug**: Logging enabled, unminified code for debugging
+- **Release**: Minified, obfuscated, and optimized for production
 
-## Requirements
+Both variants use the API key from `local.properties`.
 
-- Android Studio Hedgehog or later
-- Minimum SDK: 24 (Android 7.0)
-- Target SDK: 34 (Android 14)
-- Kotlin 1.9.0
+## Troubleshooting
+
+### "API key not found" or "Invalid API key" errors
+- Ensure `local.properties` exists in the project root
+- Verify `TMDB_API_KEY=your_actual_key` is set correctly
+- Run `./setup_api_key.sh` to set it up again
+- Sync Gradle after updating: **File** → **Sync Project with Gradle Files**
+
+### Build errors after cloning
+- Make sure you've created `local.properties` from `local.properties.example`
+- The app will use a placeholder key if `local.properties` doesn't exist (will cause API errors)
 
 ## License
 

@@ -5,6 +5,14 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
+// Load API key from local.properties file (not committed to Git)
+val localProperties = java.util.Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(java.io.FileInputStream(localPropertiesFile))
+}
+val tmdbApiKey = localProperties.getProperty("TMDB_API_KEY") ?: "REPLACE_WITH_YOUR_TMDB_API_KEY"
+
 android {
     namespace = "com.example.tmdb_atlys"
     compileSdk = 34
@@ -21,8 +29,8 @@ android {
             useSupportLibrary = true
         }
 
-        // TMDB API Key - Replace with your actual API key
-        buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+        // TMDB API Key - Loaded from local.properties (secure, not committed to Git)
+        buildConfigField("String", "TMDB_API_KEY", "\"$tmdbApiKey\"")
         buildConfigField("String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/3/\"")
         buildConfigField("String", "TMDB_IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/\"")
     }
@@ -30,7 +38,7 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = false
-            buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+            // API key loaded from local.properties (same for all build types)
         }
         release {
             isMinifyEnabled = true
@@ -39,7 +47,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+            // API key loaded from local.properties (same for all build types)
             // Using debug signing for sharing - works fine for internal distribution
         }
     }

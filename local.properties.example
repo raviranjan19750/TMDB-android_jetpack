@@ -1,0 +1,14 @@
+# TMDB API Key Configuration
+# 
+# This is a template file. Copy this to 'local.properties' and add your actual API key.
+# The 'local.properties' file is gitignored and will NOT be committed to the repository.
+#
+# Steps:
+# 1. Copy this file: cp local.properties.example local.properties
+# 2. Replace YOUR_API_KEY_HERE with your actual TMDB API key
+# 3. Get your API key from: https://www.themoviedb.org/settings/api
+#
+# Example:
+# TMDB_API_KEY=abc123def456ghi789jkl012mno345pqr678stu901vwx234yz
+
+TMDB_API_KEY=YOUR_API_KEY_HERE
