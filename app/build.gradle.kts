@@ -27,16 +27,6 @@ android {
         buildConfigField("String", "TMDB_IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/\"")
     }
 
-    signingConfigs {
-        create("release") {
-            // Using debug keystore for now - replace with your production keystore
-            storeFile = file("${project.rootDir}/app/debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-        }
-    }
-
     buildTypes {
         debug {
             isMinifyEnabled = false
@@ -46,7 +36,8 @@ android {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
-            signingConfig = signingConfigs.getByName("release")
+            // Note: For production, create a proper keystore and add signingConfig
+            // Currently using default debug signing for testing
         }
     }
 
