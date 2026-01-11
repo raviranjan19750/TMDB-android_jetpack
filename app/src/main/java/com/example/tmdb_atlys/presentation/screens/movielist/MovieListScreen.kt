@@ -16,14 +16,16 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.PullRefreshIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.pullRefresh
+import androidx.compose.material3.rememberPullRefreshState
 import androidx.compose.runtime.Composable
-import com.google.accompanist.swiperefresh.SwipeRefresh
-import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,6 +44,7 @@ import com.example.tmdb_atlys.presentation.components.ShimmerMovieGrid
 /**
  * Movie List screen displaying trending movies with search functionality.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieListScreen(
     onMovieClick: (Int) -> Unit,
@@ -49,6 +52,10 @@ fun MovieListScreen(
     viewModel: MovieListViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val pullRefreshState = rememberPullRefreshState(
+        refreshing = uiState.isRefreshing,
+        onRefresh = viewModel::onRefresh
+    )
     
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -116,15 +123,21 @@ fun MovieListScreen(
                     
                     // Success state with movies
                     else -> {
-                        SwipeRefresh(
-                            state = rememberSwipeRefreshState(isRefreshing = uiState.isRefreshing),
-                            onRefresh = viewModel::onRefresh,
-                            modifier = Modifier.fillMaxSize()
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .pullRefresh(pullRefreshState)
                         ) {
                             MovieGrid(
                                 movies = uiState.movies,
                                 onMovieClick = onMovieClick,
                                 isSearching = uiState.isSearching
+                            )
+                            
+                            PullRefreshIndicator(
+                                refreshing = uiState.isRefreshing,
+                                state = pullRefreshState,
+                                modifier = Modifier.align(Alignment.TopCenter)
                             )
                         }
                     }

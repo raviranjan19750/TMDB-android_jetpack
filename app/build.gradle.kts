@@ -107,9 +107,6 @@ dependencies {
     // Coil - Image Loading
     implementation("io.coil-kt:coil-compose:2.5.0")
 
-    // Accompanist - Pull to Refresh
-    implementation("com.google.accompanist:accompanist-swiperefresh:0.34.0")
-
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
