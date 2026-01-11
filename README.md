@@ -35,12 +35,12 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 ### UI Screenshots
 
 #### Movie Listing Page
-![Movie Listing Page](app/demo/listing_page.jpeg)
+<img src="app/demo/listing_page.jpeg" width="300" alt="Movie Listing Page">
 
 *Main screen displaying trending movies in a 2-column grid with search functionality.*
 
 #### Movie Details Page
-![Movie Details Page](app/demo/details_page.jpeg)
+<img src="app/demo/details_page.jpeg" width="300" alt="Movie Details Page">
 
 *Detailed view of a selected movie with poster, title, and overview information.*
 
