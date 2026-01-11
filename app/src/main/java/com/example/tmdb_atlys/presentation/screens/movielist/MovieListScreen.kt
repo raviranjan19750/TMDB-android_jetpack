@@ -74,6 +74,7 @@ fun MovieListScreen(
                 query = uiState.searchQuery,
                 onQueryChange = viewModel::onSearchQueryChange,
                 onSearch = viewModel::onSearch,
+                onFocusChange = viewModel::onSearchFocusChange,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp, vertical = 12.dp)

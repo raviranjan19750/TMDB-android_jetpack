@@ -22,7 +22,7 @@ android {
         }
 
         // TMDB API Key - Replace with your actual API key
-        buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+        buildConfigField("String", "TMDB_API_KEY", "\"c0c3ccb592274bc7030c9314002a11c7\"")
         buildConfigField("String", "TMDB_BASE_URL", "\"https://api.themoviedb.org/3/\"")
         buildConfigField("String", "TMDB_IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/\"")
     }
@@ -30,12 +30,12 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = false
-            buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+            buildConfigField("String", "TMDB_API_KEY", "\"c0c3ccb592274bc7030c9314002a11c7\"")
         }
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
+            buildConfigField("String", "TMDB_API_KEY", "\"c0c3ccb592274bc7030c9314002a11c7\"")
         }
     }
 

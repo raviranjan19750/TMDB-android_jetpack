@@ -50,7 +50,8 @@ fun SearchBar(
     onSearch: (String) -> Unit,
     modifier: Modifier = Modifier,
     placeholder: String = "Search movies",
-    enabled: Boolean = true
+    enabled: Boolean = true,
+    onFocusChange: ((Boolean) -> Unit)? = null
 ) {
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
@@ -97,7 +98,13 @@ fun SearchBar(
                     modifier = Modifier
                         .fillMaxWidth()
                         .focusRequester(focusRequester)
-                        .onFocusChanged { isFocused = it.isFocused },
+                        .onFocusChanged { focusState ->
+                            val wasFocused = isFocused
+                            isFocused = focusState.isFocused
+                            if (wasFocused != focusState.isFocused) {
+                                onFocusChange?.invoke(focusState.isFocused)
+                            }
+                        },
                     enabled = enabled,
                     textStyle = MaterialTheme.typography.bodyLarge.copy(
                         color = MaterialTheme.colorScheme.onSurface
