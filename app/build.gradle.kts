@@ -6,8 +6,9 @@ plugins {
 }
 
 // Load API key from local.properties file (not committed to Git)
+import java.util.Properties
 val localPropertiesFile = rootProject.file("local.properties")
-val localProperties = java.util.Properties()
+val localProperties = Properties()
 if (localPropertiesFile.exists()) {
     localPropertiesFile.inputStream().use { stream ->
         localProperties.load(stream)
