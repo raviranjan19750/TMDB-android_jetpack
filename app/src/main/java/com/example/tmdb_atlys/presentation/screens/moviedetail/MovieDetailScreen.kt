@@ -120,8 +120,8 @@ private fun MovieDetailContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
-                .aspectRatio(2f / 3f)
-                .clip(RoundedCornerShape(12.dp))
+                .aspectRatio(3f / 3f)
+                .clip(RoundedCornerShape(8.dp))
                 .background(MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center
         ) {

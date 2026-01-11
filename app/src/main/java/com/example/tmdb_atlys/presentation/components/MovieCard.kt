@@ -48,8 +48,8 @@ fun MovieCard(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .aspectRatio(2f / 3f)
-                .clip(RoundedCornerShape(12.dp))
+                .aspectRatio(3f / 3f)
+                .clip(RoundedCornerShape(8.dp))
                 .background(MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center
         ) {

@@ -67,14 +67,14 @@ fun SearchBar(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
+            .clip(RoundedCornerShape(8.dp))
             .background(backgroundColor)
             .border(
                 width = 1.dp,
                 color = borderColor,
-                shape = RoundedCornerShape(12.dp)
+                shape = RoundedCornerShape(8.dp)
             )
-            .padding(horizontal = 16.dp, vertical = 12.dp)
+            .padding(horizontal = 12.dp, vertical = 12.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -84,7 +84,7 @@ fun SearchBar(
                 imageVector = Icons.Default.Search,
                 contentDescription = "Search",
                 tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(16.dp)
             )
             
             Box(
@@ -106,7 +106,7 @@ fun SearchBar(
                             }
                         },
                     enabled = enabled,
-                    textStyle = MaterialTheme.typography.bodyLarge.copy(
+                    textStyle = MaterialTheme.typography.bodyMedium.copy(
                         color = MaterialTheme.colorScheme.onSurface
                     ),
                     cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
