@@ -34,10 +34,13 @@ android {
         }
         release {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isShrinkResources = true  // Remove unused resources
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
             buildConfigField("String", "TMDB_API_KEY", "\"YOUR_API_KEY_HERE\"")
-            // Note: For production, create a proper keystore and add signingConfig
-            // Currently using default debug signing for testing
+            // Using debug signing for sharing - works fine for internal distribution
         }
     }
 
