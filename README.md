@@ -36,7 +36,7 @@ A modern Android movie app built with Jetpack Compose that displays trending mov
 
 ### UI Screenshots
 
-<img src="app/demo/listing_page.jpeg" width="200" alt="Movie Listing Page"> <img src="app/demo/details_page.jpeg" width="200" alt="Movie Details Page"> <img src="app/demo/error_state.jpeg" width="200" alt="Movie Details Page">
+<img src="app/demo/img_list.png" width="200" alt="Movie Listing Page"> <img src="app/demo/img_detail.png" width="200" alt="Movie Details Page"> <img src="app/demo/img_error.png" width="200" alt="Movie Details Page">
 
 
 ## Architecture
